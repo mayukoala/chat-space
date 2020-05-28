@@ -32,7 +32,7 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-## userテーブル
+## user table
 |Column|Type|Options|
 |------|----|-------|
 |user_name|string|null:false|
@@ -42,7 +42,7 @@ Things you may want to cover:
 - has_many :messages
 - has_many :groups
 
-## messageテーブル
+## message table
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
@@ -53,7 +53,7 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
-## groupテーブル
+## group table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null:false|
