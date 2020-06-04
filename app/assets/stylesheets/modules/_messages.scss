@@ -15,6 +15,32 @@
     width: 100%;
     background-color: #ffffff;
     border-bottom: solid 1px #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    .info_block{
+      padding: 35px 0px 0px 40px;
+      &__name{
+        color: #333333;
+        font-size: 20px;
+        padding-bottom: 15px;
+      }
+      &__member{
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+    .edit_btn{
+      display: block;
+      height: 40px;
+      width: 72px;
+      line-height: 40px;
+      margin: 28px 40px;
+      color: #38aef0;
+      font-size: 16px;
+      border: solid 1px;
+      padding: 0px 20px;
+      text-decoration: none;
+    }
   }
   &__message_list{
     height: calc(100vh - 190px);
