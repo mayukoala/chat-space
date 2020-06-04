@@ -46,6 +46,28 @@
     height: calc(100vh - 190px);
     width: 100%;
     background-color: #fafafa;
+    padding: 35px 40px;
+    .message_block{
+      margin-bottom: 40px;
+      &__info{
+        display: flex;
+        &__name{
+          color: #333333;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__datetime{
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+      &__message{
+       color: #434a54;
+       font-size: 14px;
+       margin-top: 12px;
+      }
+    }
   }
   &__message_form{
     height: 90px;
