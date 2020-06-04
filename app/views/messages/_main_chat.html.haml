@@ -7,6 +7,7 @@
         Member：名前
     = link_to "#", class:"edit_btn" do
       Edit
+
   .chat_main__message_list
     .message_block
       .message_block__info
@@ -24,4 +25,11 @@
           YYYY/MM/DD(aaa) 00:00:00
       .message_block__message
         メッセージの内容2
+
   .chat_main__message_form
+    .text_box
+      .text_box__input
+        type a message
+      .text_box__icon
+    = link_to "#", class:"send_btn" do
+      Send
