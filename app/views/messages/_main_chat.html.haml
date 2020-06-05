@@ -27,9 +27,10 @@
         メッセージの内容2
 
   .chat_main__message_form
-    .text_box
-      .text_box__input
-        type a message
-      .text_box__icon
-    = link_to "#", class:"send_btn" do
-      Send
+    %form
+      .text_box
+        %input{type: "text", class: "text_box__input", placeholder:"type a message"}
+        %label{class: "text_box__image"}
+          =icon('far', 'image')
+          %input{type: "file", class:"file"}
+      %input{type: "submit", value: "Send", class: "send_btn"}

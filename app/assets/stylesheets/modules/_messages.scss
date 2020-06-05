@@ -2,14 +2,13 @@
   box-sizing: border-box;
 }
 
-
 .wrapper{
   display: flex;
 }
 
 .chat_main {
   height: 100vh;
-  width: calc(100vw - 300px);
+  width: calc(100% - 300px);
   &__group_info{
     height: 99px;
     width: 100%;
@@ -42,6 +41,7 @@
       text-decoration: none;
     }
   }
+
   &__message_list{
     height: calc(100vh - 190px);
     width: 100%;
@@ -69,38 +69,42 @@
       }
     }
   }
+
   &__message_form{
     height: 90px;
     width: 100%;
     background-color: #d2d2d2;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    .text_box{
-      height: 50px;
-      width: calc(100vw - 100px);
-      background-color: #ffffff;
-      
-      &__input{
-        color: #434a54;
-        line-height: 50px;
-        padding: 0px 10px;
+    form{
+      display: flex;
+      padding: 20px 40px;
+      .text_box{
+        width: calc(100% - 100px);
+        height: 50px;
+        background-color: #ffffff;
+        margin-right: 15px;
+        display: flex;
+        &__input{
+          border-style: none;
+          line-height: 50px;
+          padding-left: 10px;
+          width: 100%;
+        }
+        &__image{
+          line-height: 50px;
+          padding-right: 10px;
+          font-size: 25px;
+          .file{
+            display: none;
+          }
+        }
       }
-      &__icon{
-
-      }
-    }
-    .send_btn{
-      display: block;
-      height: 50px;
-      width: 100px;
-      text-decoration: none;
-      background-color: #38aef0;
-      color: #ffffff;
-      line-height: 50px;
-      margin-left: 15px;
-      padding: 0px 30px;
-
+      .send_btn{
+        height: 50px;
+        width: 100px;
+        background-color: #38aef0;
+        color: #ffffff;
+        border-style: none;
+       }
     } 
   }
 }
@@ -115,7 +119,6 @@
     background-color: #253141;
     color: #ffffff;
     font-weight: bold;
-    
     .user_name{
       line-height: 100px;
       display: flex;
@@ -134,7 +137,6 @@
         color: #ffffff;
         }
       }
-      
     }
   }
   &__group_list{
