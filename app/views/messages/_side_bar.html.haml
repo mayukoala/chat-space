@@ -1,0 +1,16 @@
+.side_bar
+  .side_bar__header
+    .user_name
+      .user_name__name
+        名前
+      .user_name__config
+        = link_to "#", class: "user_name__config__icon" do
+          = icon('far', 'edit')
+        = link_to "#", class: "user_name__config__icon" do
+          = icon('fas', 'cog')
+  .side_bar__group_list
+    .group_preview
+      .group_preview__name
+        グループ名
+      .group_preview__message
+        最新のメッセージ
