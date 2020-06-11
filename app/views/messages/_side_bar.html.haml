@@ -4,7 +4,7 @@
       .user_name__name
         = current_user.name
       .user_name__config
-        = link_to "#", class: "user_name__config__icon" do
+        = link_to new_group_path, class: "user_name__config__icon" do
           = icon('far', 'edit')
         = link_to edit_user_path(current_user), class: "user_name__config__icon" do
           = icon('fas', 'cog')
