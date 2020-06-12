@@ -4,13 +4,15 @@
       .user_name__name
         = current_user.name
       .user_name__config
-        = link_to "#", class: "user_name__config__icon" do
+        = link_to new_group_path, class: "user_name__config__icon" do
           = icon('far', 'edit')
         = link_to edit_user_path(current_user), class: "user_name__config__icon" do
           = icon('fas', 'cog')
   .side_bar__group_list
-    .group_preview
-      .group_preview__name
-        グループ名
-      .group_preview__message
-        最新のメッセージ
+    - current_user.groups.each do |group|
+      .group_preview
+        = link_to '#' do  
+          .group_preview__name
+            = group.name
+          .group_preview__message
+            最新のメッセージ

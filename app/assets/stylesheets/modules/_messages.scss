@@ -114,6 +114,10 @@
   @mixin sidebar_font {
     color: #ffffff;
     font-weight: bold;
+    a {
+      text-decoration: none;
+      color: #ffffff;
+    }
   }
   height: 100vh;
   width: 300px;
