@@ -27,10 +27,10 @@
         メッセージの内容2
 
   .chat_main__message_form
-    %form
+    = form_for [@group, @message] do |f|
       .text_box
-        %input{type: "text", class: "text_box__input", placeholder:"type a message"}
-        %label{class: "text_box__image"}
-          =icon('far', 'image')
-          %input{type: "file", class:"file"}
-      %input{type: "submit", value: "Send", class: "send_btn"}
+        = f.text_field :content, class: 'text_box__input', placeholder: 'type a message'
+        = f.label :image, class: 'text_box__image' do
+          = icon('far', 'image')
+          = f.file_field :image, class: 'file'
+      = f.submit 'Send', class: 'send_btn'
