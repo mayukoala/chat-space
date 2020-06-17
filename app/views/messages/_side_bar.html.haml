@@ -11,7 +11,7 @@
   .side_bar__group_list
     - current_user.groups.each do |group|
       .group_preview
-        = link_to '#' do  
+        = link_to group_messages_path(group) do  
           .group_preview__name
             = group.name
           .group_preview__message

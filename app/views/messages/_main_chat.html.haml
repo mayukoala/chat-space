@@ -2,29 +2,15 @@
   .chat_main__group_info
     .info_block
       .info_block__name
-        グループ名
+        = @group.name
       .info_block__member
         Member：名前
     = link_to "#", class:"edit_btn" do
       Edit
 
   .chat_main__message_list
-    .message_block
-      .message_block__info
-        .message_block__info__name
-          名前
-        .message_block__info__datetime
-          YYYY/MM/DD(aaa) 00:00:00
-      .message_block__message
-        メッセージの内容
-    .message_block
-      .message_block__info
-        .message_block__info__name
-          名前2
-        .message_block__info__datetime
-          YYYY/MM/DD(aaa) 00:00:00
-      .message_block__message
-        メッセージの内容2
+    = render @messages
+      
 
   .chat_main__message_form
     = form_for [@group, @message] do |f|
