@@ -47,6 +47,7 @@
     width: 100%;
     background-color: #fafafa;
     padding: 35px 40px;
+    overflow: hidden visible;
     .message_block{
       margin-bottom: 40px;
       &__info{
@@ -66,6 +67,10 @@
        color: #434a54;
        font-size: 14px;
        margin-top: 12px;
+      }
+      &__image{
+        max-height: 200px;
+        max-width: 200px;
       }
     }
   }

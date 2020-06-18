@@ -2,35 +2,23 @@
   .chat_main__group_info
     .info_block
       .info_block__name
-        グループ名
+        = @group.name
       .info_block__member
-        Member：名前
-    = link_to "#", class:"edit_btn" do
+        Member:
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group), class:"edit_btn" do
       Edit
 
   .chat_main__message_list
-    .message_block
-      .message_block__info
-        .message_block__info__name
-          名前
-        .message_block__info__datetime
-          YYYY/MM/DD(aaa) 00:00:00
-      .message_block__message
-        メッセージの内容
-    .message_block
-      .message_block__info
-        .message_block__info__name
-          名前2
-        .message_block__info__datetime
-          YYYY/MM/DD(aaa) 00:00:00
-      .message_block__message
-        メッセージの内容2
+    = render @messages
+      
 
   .chat_main__message_form
-    %form
+    = form_for [@group, @message] do |f|
       .text_box
-        %input{type: "text", class: "text_box__input", placeholder:"type a message"}
-        %label{class: "text_box__image"}
-          =icon('far', 'image')
-          %input{type: "file", class:"file"}
-      %input{type: "submit", value: "Send", class: "send_btn"}
+        = f.text_field :body, class: 'text_box__input', placeholder: 'type a message'
+        = f.label :image, class: 'text_box__image' do
+          = icon('far', 'image')
+          = f.file_field :image, class: 'file'
+      = f.submit 'Send', class: 'send_btn'
