@@ -1,19 +1,19 @@
 require 'rails_helper'
 describe Message, type: :model do
   describe '#create' do
-  context 'messageを保存できる場合' do
-    it 'bodyがあれば保存できること' do
-      expect(build(:message, image: nil)).to be_valid
-    end
+    context 'messageを保存できる場合' do
+      it 'bodyがあれば保存できること' do
+        expect(build(:message, image: nil)).to be_valid
+      end
 
-    it 'imageがあれば保存できること' do
-      expect(build(:message, body: nil)).to be_valid
-    end
+      it 'imageがあれば保存できること' do
+        expect(build(:message, body: nil)).to be_valid
+      end
 
-    it 'body と imageがあれば保存できること' do
-      expect(build(:message)).to be_valid
+      it 'body と imageがあれば保存できること' do
+        expect(build(:message)).to be_valid
+      end
     end
-  end
 
     context 'messageを保存できない場合' do
       it "contentもimageも無いと保存できないこと" do
