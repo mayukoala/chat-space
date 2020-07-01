@@ -57,4 +57,8 @@ $(function() {
     let data_user_name = $(this).data('user-name');
     appendUserToMember(data_user_id, data_user_name)
    });
+  
+  $("#chat-group-users").on('click', ".user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn", function(){
+    $(this).parent().remove();
+  });
 });
