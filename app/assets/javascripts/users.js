@@ -14,6 +14,16 @@ $(function() {
     $("#user-search-result").append(html);
   }   
 
+  function appendUserToMember(data_user_id, data_user_name) {
+    var html = `
+          <div class='chat-group-user'>
+            <input name='group[user_ids][]' type='hidden' value='${data_user_id}'>
+            <p class='chat-group-user__name'>${data_user_name}</p>
+            <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
+          </div>
+          `
+    $("#chat-group-users.js-add-user").append(html);
+  } 
   
 
   $("#user-search-field").on("keyup", function() {
@@ -42,7 +52,9 @@ $(function() {
       });
    });
 
-   $("#user-search-result").on('click', ".user-search-add.chat-group-user__btn.chat-group-user__btn--add", function(){
-      console.log("ibent")
+  $("#user-search-result").on('click', ".user-search-add.chat-group-user__btn.chat-group-user__btn--add", function(){
+    let data_user_id = $(this).data('user-id');
+    let data_user_name = $(this).data('user-name');
+    appendUserToMember(data_user_id, data_user_name)
    });
 });
