@@ -24,6 +24,7 @@ $(function() {
           `
     $("#chat-group-users.js-add-user").append(html);
   } 
+
   
 
   $("#user-search-field").on("keyup", function() {
@@ -52,13 +53,16 @@ $(function() {
       });
    });
 
-  $("#user-search-result").on('click', ".user-search-add.chat-group-user__btn.chat-group-user__btn--add", function(){
+  $(document).on('click', ".user-search-add.chat-group-user__btn.chat-group-user__btn--add", function(){
     let data_user_id = $(this).data('user-id');
     let data_user_name = $(this).data('user-name');
-    appendUserToMember(data_user_id, data_user_name)
+    $(this).parent().remove();
+    appendUserToMember(data_user_id, data_user_name);
+    
+    
    });
   
-  $("#chat-group-users").on('click', ".user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn", function(){
+  $(document).on('click', ".user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn", function(){
     $(this).parent().remove();
   });
 });
