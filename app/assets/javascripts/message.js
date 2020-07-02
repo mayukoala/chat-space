@@ -1,4 +1,6 @@
 $(function() {
+
+
   function buildHTML(message){
     if (message.image) {
       var html =`<div class="message_block">
@@ -61,4 +63,21 @@ $(function() {
       $('.send_btn').prop('disabled', false);
     });
   });
+
+
+  var reloadMessages = function() {
+    var last_message_id = $('.message_block:last').data("message-id");
+    $.ajax({
+      url: "groups/${json.id}/api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      console.log('succcess');
+    })
+    .fail(function() {
+      alert('error');
+    })
+  }
 });
